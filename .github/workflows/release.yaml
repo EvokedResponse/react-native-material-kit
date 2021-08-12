@@ -35,10 +35,3 @@ jobs:
           git config --global user.email 'adamh.mobile@gmail.com'
           git checkout -b $NEW_BRANCH
           yarn build-publish
-
-          git update-index --chmod=+x ./scripts/updateVersion.sh
-
-          yarn update-version
-
-          git push -u origin "${NEW_BRANCH}"
-          gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
