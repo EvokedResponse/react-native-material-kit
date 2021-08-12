@@ -27,7 +27,7 @@ jobs:
           NEW_BRANCH="BNT-v${NEW_VERSION}"
 
           yarn || exit 1
-          yarn build:dry || exit 1
+          yarn build || exit 1
           yarn test || exit 1
 
           npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
