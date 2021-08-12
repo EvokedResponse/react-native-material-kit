@@ -33,7 +33,6 @@
     "url": "ssh://git@github.com:EvokedResponse/react-native-material-kit.git"
   },
   "publishConfig": {
-    "access": "restricted",
     "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
