@@ -33,5 +33,7 @@ jobs:
           npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
           git config --global user.name 'AdamSheaHewett'
           git config --global user.email 'adamh.mobile@gmail.com'
-          git checkout -b $NEW_BRANCH
-          yarn build-publish
+          # git checkout -b $NEW_BRANCH
+          yarn build-clean
+
+          yarn publish

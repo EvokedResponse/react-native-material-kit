@@ -22,8 +22,8 @@
     "clean": "rm -rf lib temp etc dist docs && yarn clean-ln",
     "clean-ln": "rm -f src/mdl/Spinner.tsx",
     "ln": "ln -f src/mdl/Spinner.ios.tsx src/mdl/Spinner.tsx",
-    "build-publish": "yarn build-docs && yarn clean-ln && rm lib/mdl/Spinner.js",
-    "package": "yarn clean-ln && npm publish",
+    "build-clean": "yarn build-docs && yarn clean-ln && rm lib/mdl/Spinner.js",
+    "publish": "npm publish",
     "setup": "mkdir temp etc dist docs",
     "api-md": "api-documenter markdown --input-folder temp --output-folder docs/api"
   },
@@ -33,6 +33,7 @@
     "url": "ssh://git@github.com:EvokedResponse/react-native-material-kit.git"
   },
   "publishConfig": {
+    "access": "restricted",
     "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
