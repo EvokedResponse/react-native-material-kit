@@ -3,29 +3,22 @@
   "version": "0.6.0-beta.2",
   "description": "Bringing Material Design to React Native",
   "main": "lib/index.js",
-  "typings": "lib/react-native-material-kit.d.ts",
-  "author": "Yingxin Wu <yingxinwu.g@gmail.com>",
+  "typings": "lib/index.d.ts",
+  "author": {
+    "name": "Evoked Response",
+    "url": "https://www.github.com/EvokedResponse"
+  },
   "contributors": [
     "Quentin Valmori (https://github.com/Crash--)",
     "Alexander Price (https://github.com/alexprice91)"
   ],
   "license": "MIT",
-  "keywords": [
-    "react",
-    "native",
-    "react-component",
-    "react-native",
-    "react-native-component",
-    "ios",
-    "android",
-    "material design",
-    "MaterialKit"
-  ],
-  "homepage": "https://github.com/xinthink/react-native-material-kit",
-  "bugs": "https://github.com/xinthink/react-native-material-kit/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/xinthink/react-native-material-kit.git"
+    "url": "ssh://git@github.com:EvokedResponse/react-native-material-kit.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "@microsoft/api-documenter": "^7.3.11",
