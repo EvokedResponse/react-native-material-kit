@@ -57,13 +57,13 @@
   "scripts": {
     "lint": "tslint -p .",
     "test": "jest",
-    "build": "tsc --noEmit",
+    "build": "yarn lint && tsc --noEmit",
     "build-docs": "yarn clean && yarn setup && yarn ln && yarn build && api-extractor run --local --verbose && yarn api-md",
     "clean": "rm -rf lib temp etc dist docs && yarn clean-ln",
     "clean-ln": "rm -f src/mdl/Spinner.tsx",
     "ln": "ln -f src/mdl/Spinner.ios.tsx src/mdl/Spinner.tsx",
     "build-publish": "yarn build-docs && yarn clean-ln && rm lib/mdl/Spinner.js",
-    "package": "cd dist && npm publish",
+    "package": "yarn clean-ln && npm publish",
     "setup": "mkdir temp etc dist docs",
     "api-md": "api-documenter markdown --input-folder temp --output-folder docs/api"
   },
