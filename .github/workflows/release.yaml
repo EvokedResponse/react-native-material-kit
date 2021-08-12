@@ -1,0 +1,40 @@
+name: release-version
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "New version number (in the form 1.2.3)"
+        required: true
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up node using nvm
+        uses: dcodeIO/setup-node-nvm@v4
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: gh config set prompt disabled
+      - run: |
+          SOURCE=$(git branch --show-current)
+          export NEW_VERSION="${{ github.event.inputs.version }}"
+          NEW_BRANCH="BNT-v${NEW_VERSION}"
+
+          yarn || exit 1
+          yarn build:dry || exit 1
+          yarn test || exit 1
+
+          npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+          git config --global user.name 'AdamSheaHewett'
+          git config --global user.email 'adamh.mobile@gmail.com'
+          git checkout -b $NEW_BRANCH
+          yarn package
+
+          git push -u origin "${NEW_BRANCH}"
+          gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
