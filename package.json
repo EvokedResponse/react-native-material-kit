@@ -16,6 +16,7 @@
     "lint": "tslint -p .",
     "test": "jest",
     "build": "yarn lint && tsc",
+    "update-version": "./scripts/updateVersion.sh",
     "build-docs": "yarn clean && yarn setup && yarn ln && yarn build && api-extractor run --local --verbose && yarn api-md",
     "clean": "rm -rf lib temp etc dist docs && yarn clean-ln",
     "clean-ln": "rm -f src/mdl/Spinner.tsx",

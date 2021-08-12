@@ -36,5 +36,7 @@ jobs:
           git checkout -b $NEW_BRANCH
           yarn build-publish
 
+          yarn update-version
+
           git push -u origin "${NEW_BRANCH}"
           gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
