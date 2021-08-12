@@ -24,7 +24,7 @@ jobs:
       - run: |
           SOURCE=$(git branch --show-current)
           export NEW_VERSION="${{ github.event.inputs.version }}"
-          NEW_BRANCH="BNT-v${NEW_VERSION}"
+          NEW_BRANCH="ER-v${NEW_VERSION}"
 
           yarn || exit 1
           yarn build || exit 1
@@ -35,6 +35,8 @@ jobs:
           git config --global user.email 'adamh.mobile@gmail.com'
           git checkout -b $NEW_BRANCH
           yarn build-publish
+
+          git update-index --chmod=+x ./scripts/updateVersion.sh
 
           yarn update-version
 

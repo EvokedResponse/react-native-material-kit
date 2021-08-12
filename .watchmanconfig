@@ -5,6 +5,7 @@
   ],
   "ignore_dirs": [
     ".git",
+    "*/scripts",
     "*/node_modules",
     ".idea",
     "*/build",

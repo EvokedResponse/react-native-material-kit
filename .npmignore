@@ -2,6 +2,16 @@
 #
 .DS_Store
 
+scripts/
+.vscode/
+rollup.config.*
+.*
+*.map
+*.spec.*
+*.test.*
+__tests__/
+
+
 # Xcode
 #
 build/
