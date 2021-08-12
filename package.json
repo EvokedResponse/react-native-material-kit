@@ -30,7 +30,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:EvokedResponse/react-native-material-kit.git"
+    "url": "git@github.com:EvokedResponse/react-native-material-kit.git"
   },
   "publishConfig": {
     "access": "public",
