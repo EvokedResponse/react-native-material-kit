@@ -33,7 +33,19 @@ jobs:
           npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
           git config --global user.name 'AdamSheaHewett'
           git config --global user.email 'adamh.mobile@gmail.com'
-          # git checkout -b $NEW_BRANCH
+          git checkout -b $NEW_BRANCH
+
+          git update-index --chmod=+x ./scripts/updateVersion.sh
+          chmod +x -r ./scripts
+          chmod +x ./scripts/updateVersion.sh
+
+          yarn update-version
+
           yarn build-clean
 
           yarn publish
+
+
+
+          git push -u origin "${NEW_BRANCH}"
+          gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
