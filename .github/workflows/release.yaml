@@ -22,6 +22,10 @@ jobs:
           fetch-depth: 0
       - run: gh config set prompt disabled
       - run: |
+          npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+          git config --global user.name 'AdamSheaHewett'
+          git config --global user.email 'adamh.mobile@gmail.com'
+
           SOURCE=$(git branch --show-current)
           export NEW_VERSION="${{ github.event.inputs.version }}"
           NEW_BRANCH="ER-v${NEW_VERSION}"
@@ -31,9 +35,7 @@ jobs:
           yarn emit-js || exit 1
           yarn test || exit 1
 
-          npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
-          git config --global user.name 'AdamSheaHewett'
-          git config --global user.email 'adamh.mobile@gmail.com'
+
           git checkout -b $NEW_BRANCH
 
           yarn build-clean
