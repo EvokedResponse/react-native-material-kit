@@ -31,6 +31,8 @@ jobs:
           NEW_BRANCH="ER-v${NEW_VERSION}"
           git checkout -b $NEW_BRANCH
           yarn version --new-version $NEW_VERSION
+          git commit -am package.json
+          git push -u origin "${NEW_BRANCH}"
 
 
           yarn || exit 1
@@ -42,10 +44,10 @@ jobs:
 
           yarn build-clean
 
-          cp package.json lib/package.json
+          # cp package.json lib/package.json
 
           yarn publish
 
 
-          git push -u origin "${NEW_BRANCH}"
+
           gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
