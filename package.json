@@ -1,6 +1,6 @@
 {
   "name": "@evokedresponse/react-native-material-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bringing Material Design to React Native",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

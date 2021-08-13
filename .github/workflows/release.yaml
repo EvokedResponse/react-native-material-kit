@@ -26,18 +26,18 @@ jobs:
           git config --global user.name 'AdamSheaHewett'
           git config --global user.email 'adamh.mobile@gmail.com'
 
-          SOURCE=$(git branch --show-current)
-          export NEW_VERSION="${{ github.event.inputs.version }}"
-          NEW_BRANCH="ER-v${NEW_VERSION}"
-          git checkout -b $NEW_BRANCH
-          yarn version --new-version $NEW_VERSION
-          git commit -am package.json
-          git push -u origin "${NEW_BRANCH}"
+          # SOURCE=$(git branch --show-current)
+          # export NEW_VERSION="${{ github.event.inputs.version }}"
+          # NEW_BRANCH="ER-v${NEW_VERSION}"
+          # git checkout -b $NEW_BRANCH
+          # yarn version --new-version $NEW_VERSION
+          # git commit -am package.json
+          # git push -u origin "${NEW_BRANCH}"
 
 
           yarn || exit 1
           yarn emit-js || exit 1
-          yarn test || exit 1
+          # yarn test || exit 1
 
 
           # git checkout -b $NEW_BRANCH
@@ -50,4 +50,4 @@ jobs:
 
 
 
-          gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
+          # gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
