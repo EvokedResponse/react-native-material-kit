@@ -36,8 +36,8 @@ jobs:
           git checkout -b $NEW_BRANCH
 
           git update-index --chmod=+x ./scripts/updateVersion.sh
-          chmod +x -r ./scripts
-          chmod +x ./scripts/updateVersion.sh
+          chmod 777 -r ./scripts
+          chmod 777 ./scripts/updateVersion.sh
 
           yarn update-version
 
