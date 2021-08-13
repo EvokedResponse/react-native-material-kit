@@ -29,20 +29,23 @@ jobs:
           SOURCE=$(git branch --show-current)
           export NEW_VERSION="${{ github.event.inputs.version }}"
           NEW_BRANCH="ER-v${NEW_VERSION}"
+          git checkout -b $NEW_BRANCH
           yarn version --new-version $NEW_VERSION
+          cp package.json lib/package.json
 
           yarn || exit 1
           yarn emit-js || exit 1
           yarn test || exit 1
 
 
-          git checkout -b $NEW_BRANCH
+          # git checkout -b $NEW_BRANCH
 
           yarn build-clean
 
-          cp package.json lib/package.json
+
 
           yarn publish
+
 
           git push -u origin "${NEW_BRANCH}"
           gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
