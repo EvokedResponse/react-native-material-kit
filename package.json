@@ -1,9 +1,9 @@
 {
   "name": "@evokedresponse/react-native-material-kit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Bringing Material Design to React Native",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "index.js",
+  "typings": "index.d.ts",
   "author": {
     "name": "Evoked Response",
     "url": "https://www.github.com/EvokedResponse"
@@ -23,7 +23,8 @@
     "clean-ln": "rm -f src/mdl/Spinner.tsx",
     "ln": "ln -f src/mdl/Spinner.ios.tsx src/mdl/Spinner.tsx",
     "build-clean": "yarn build-docs && yarn clean-ln && rm lib/mdl/Spinner.js",
-    "publish": "yarn publish",
+    "build": "tsc",
+    "package": "cd dist && npm publish",
     "setup": "mkdir temp etc dist docs",
     "api-md": "api-documenter markdown --input-folder temp --output-folder docs/api"
   },

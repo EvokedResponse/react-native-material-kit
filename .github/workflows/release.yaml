@@ -37,17 +37,21 @@ jobs:
 
 
           yarn || exit 1
-          yarn emit-js || exit 1
+          # yarn emit-js || exit 1
           # yarn test || exit 1
 
 
           # git checkout -b $NEW_BRANCH
 
-          yarn build-clean
+          # yarn build-clean
 
           # cp package.json lib/package.json
 
-          npm publish
+          # npm publish
+
+          yarn setup
+          yarn build
+          yarn package
 
 
 

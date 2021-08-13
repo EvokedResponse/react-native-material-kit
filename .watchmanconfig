@@ -1,6 +1,6 @@
 {
   "root_dirs": [
-    "lib",
+    "dist",
     "index*.js"
   ],
   "ignore_dirs": [
