@@ -34,7 +34,7 @@ target 'example' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'react-native-material-kit', :path => '../..'
+  pod 'materialuikit', :path => '../..'
 
   target 'exampleTests' do
     inherit! :search_paths

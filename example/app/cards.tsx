@@ -1,7 +1,6 @@
+import { CheckedListener, getTheme, IconToggle } from 'materialuikit';
 import React from 'react';
-import { Text, View, ScrollView, Image } from 'react-native';
-
-import { IconToggle, getTheme, CheckedListener } from 'react-native-material-kit';
+import { Image, ScrollView, Text, View } from 'react-native';
 
 import styles from './styles';
 

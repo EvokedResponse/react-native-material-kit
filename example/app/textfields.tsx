@@ -1,10 +1,9 @@
+import { MKColor, Textfield } from 'materialuikit';
 /**
  * Created by ywu on 15/7/16.
  */
 import React, { createRef } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-
-import { Textfield, MKColor } from 'react-native-material-kit';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import appStyles from './styles';
 

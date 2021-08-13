@@ -1,10 +1,10 @@
+import { Progress, Spinner } from 'materialuikit';
 /**
  * Created by ywu on 15/8/13.
  */
 import React, { createRef } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { Progress, Spinner } from 'react-native-material-kit';
 import appStyles from './styles';
 
 const styles = Object.assign(

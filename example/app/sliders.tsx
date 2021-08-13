@@ -2,10 +2,9 @@
  * Created by ywu on 15/8/31.
  */
 
+import { NumRange, RangeSlider, Slider } from 'materialuikit';
 import React, { Component, createRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-import { Slider, RangeSlider, NumRange } from 'react-native-material-kit';
 
 import appStyles from './styles';
 

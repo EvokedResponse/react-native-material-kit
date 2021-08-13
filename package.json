@@ -1,5 +1,5 @@
 {
-  "name": "@evokedresponse/react-native-material-kit",
+  "name": "@evokedresponse/materialuikit",
   "version": "1.0.5",
   "description": "Bringing Material Design to React Native",
   "main": "index.js",
@@ -28,7 +28,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EvokedResponse/react-native-material-kit.git"
+    "url": "https://github.com/EvokedResponse/materialuikit.git"
   },
   "publishConfig": {
     "access": "public",

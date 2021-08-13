@@ -3,25 +3,24 @@
  * https://github.com/facebook/react-native
  */
 import React from 'react';
-import { StyleSheet, Text, ScrollView, TouchableOpacity, Platform } from 'react-native';
+import { Platform, ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
 
-// import { setTheme, MKColor } from 'react-native-material-kit';
-
+// import { setTheme, MKColor } from 'materialuikit';
 // customize the material design theme
 // setTheme({
 //   primaryColor: MKColor.Purple,
 //   primaryColorRGB: MKColor.RGBPurple,
 //   accentColor: MKColor.Amber,
 // });
-
 import Buttons from './buttons';
-import TextFields from './textfields';
-import Toggles from './toggles';
+import Cards from './cards';
 import Progress from './progress';
 import Sliders from './sliders';
-import Cards from './cards';
+import TextFields from './textfields';
+import Toggles from './toggles';
 
 type RootStackParamList = {
   Home: undefined;

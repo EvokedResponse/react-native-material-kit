@@ -57,7 +57,7 @@ ts*
 lib/**/*.d.ts
 lib/**/*.ts.map
 lib/**/*.js.map
-!lib/react-native-material-kit.d.ts
+!lib/materialuikit.d.ts
 
 __tests__/
 src/

@@ -1,21 +1,11 @@
+import {
+  AccentFab, ButtonStyles, ColoredFab, ColoredRaisedButton, Fab, FlatButton, getTheme, RaisedButton
+} from 'materialuikit';
 /**
  * Created by ywu on 15/7/16.
  */
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
-
-import {
-  ButtonStyles,
-  ColoredRaisedButton,
-  RaisedButton,
-  FlatButton,
-  Fab,
-  ColoredFab,
-  AccentFab,
-  // MKColor,
-  // setTheme,
-  getTheme,
-} from 'react-native-material-kit';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import appStyles from './styles';
 

@@ -2,20 +2,12 @@
  * Created by ywu on 15/7/24.
  */
 
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-
 import {
-  getTheme,
-  MKColor,
-  setTheme,
-  Checkbox,
-  CheckedEvent,
-  IconToggle,
-  RadioButton,
-  RadioButtonGroup,
-  Switch,
-} from 'react-native-material-kit';
+  Checkbox, CheckedEvent, getTheme, IconToggle, MKColor, RadioButton, RadioButtonGroup, setTheme,
+  Switch
+} from 'materialuikit';
+import React, { Component } from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import appStyles from './styles';
 
