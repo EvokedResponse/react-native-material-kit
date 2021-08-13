@@ -25,9 +25,10 @@ jobs:
           SOURCE=$(git branch --show-current)
           export NEW_VERSION="${{ github.event.inputs.version }}"
           NEW_BRANCH="ER-v${NEW_VERSION}"
+          yarn version --new-version $NEW_VERSION
 
           yarn || exit 1
-          yarn build || exit 1
+          yarn emit-js || exit 1
           yarn test || exit 1
 
           npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
@@ -35,17 +36,9 @@ jobs:
           git config --global user.email 'adamh.mobile@gmail.com'
           git checkout -b $NEW_BRANCH
 
-          git update-index --chmod=+x './scripts/updateVersion.sh'
-          chmod -R 777 './scripts'
-          chmod 777 './scripts/updateVersion.sh'
-
-          yarn update-version
-
           yarn build-clean
 
           yarn publish
-
-
 
           git push -u origin "${NEW_BRANCH}"
           gh pr create --fill --title "${NEW_BRANCH} -> ${SOURCE}" --head "${NEW_BRANCH}" --base "${SOURCE}"
