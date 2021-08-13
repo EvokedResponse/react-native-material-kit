@@ -45,7 +45,7 @@ jobs:
 
           # yarn build-clean
 
-          # cp package.json lib/package.json
+          cp package.json dist/package.json
 
           # npm publish
 
