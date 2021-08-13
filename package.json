@@ -1,6 +1,6 @@
 {
   "name": "@evokedresponse/react-native-material-kit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Bringing Material Design to React Native",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -34,7 +34,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "@microsoft/api-documenter": "^7.3.11",

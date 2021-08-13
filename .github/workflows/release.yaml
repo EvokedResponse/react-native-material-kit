@@ -22,8 +22,8 @@ jobs:
           fetch-depth: 0
       - run: gh config set prompt disabled
       - run: |
-          # npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
-          npm set //registry.npmjs.org/:_authToken $GITHUB_TOKEN
+          npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+          # npm set //registry.npmjs.org/:_authToken $GITHUB_TOKEN
           git config --global user.name 'AdamSheaHewett'
           git config --global user.email 'adamh.mobile@gmail.com'
 
@@ -47,7 +47,7 @@ jobs:
 
           # cp package.json lib/package.json
 
-          yarn publish
+          npm publish
 
 
 
