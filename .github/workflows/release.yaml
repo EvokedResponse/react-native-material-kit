@@ -40,6 +40,8 @@ jobs:
 
           yarn build-clean
 
+          cp package.json lib/package.json
+
           yarn publish
 
           git push -u origin "${NEW_BRANCH}"
