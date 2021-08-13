@@ -24,7 +24,7 @@
     "ln": "ln -f src/mdl/Spinner.ios.tsx src/mdl/Spinner.tsx",
     "build-clean": "yarn build-docs && yarn clean-ln && rm lib/mdl/Spinner.js",
     "build": "tsc",
-    "package": "cd dist && npm publish",
+    "package": "npm publish",
     "setup": "mkdir temp etc dist docs",
     "api-md": "api-documenter markdown --input-folder temp --output-folder docs/api"
   },
