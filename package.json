@@ -16,15 +16,12 @@
   "scripts": {
     "lint": "tslint -p .",
     "test": "jest",
-    "emit-js": "yarn lint && tsc",
-    "update-version": "./scripts/updateVersion.sh",
-    "build-docs": "yarn clean && yarn setup && yarn ln && yarn emit-js && api-extractor run --local --verbose && yarn api-md",
+    "build": "yarn lint && tsc",
+    "build-docs": "yarn clean && yarn setup && yarn ln && yarn build && api-extractor run --local --verbose && yarn api-md",
     "clean": "rm -rf lib temp etc dist docs && yarn clean-ln",
     "clean-ln": "rm -f src/mdl/Spinner.tsx",
     "ln": "ln -f src/mdl/Spinner.ios.tsx src/mdl/Spinner.tsx",
-    "build-clean": "yarn build-docs && yarn clean-ln && rm lib/mdl/Spinner.js",
-    "build": "tsc",
-    "package": "npm publish",
+    "build-publish": "yarn build-docs && yarn clean-ln && rm lib/mdl/Spinner.js",
     "setup": "mkdir temp etc dist docs",
     "api-md": "api-documenter markdown --input-folder temp --output-folder docs/api"
   },
